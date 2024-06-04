@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #8ecae6, #219ebc);
+    color: red;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h2 {
+    color: black;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.contender {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 10);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeOut  0.5s ease-in-out;
+}
+
+.contender h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.contender h3 {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.voltar {
+    display: inline-block;
+    background-color: #4CAF50;
+    text-decoration: none;
+    width: 15vh;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.voltar a {
+    color: white;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    background-color: #45a049;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.mensagem {
+    color: red;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+@keyframes fadeOut  {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

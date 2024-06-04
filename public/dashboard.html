@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementando chatJs</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body onload="obterPontuacao()">
+  <section class="home">
+    <header class="header">
+      <div id="navbar">
+        <ul>
+          <li><a href="./logadoIndex.html#home">Home</a></li>
+          <li><a href="./logadoIndex.html#about">Sobre</a></li>
+          <li><a href="./logadoIndex.html#curiosity">Curiosidades</a></li>
+          <li><a href="./vejaMais.html">Envie sua sugestão</a></li>
+          <li><a href="dashboard.html">Gráfico</a></li>
+          <div class="sair">
+            <li><a href="index.html">Sair</a></li>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <div class="corpoDashboard">
+  
+      <div id="chart-container">
+        <canvas id="myBarChart" style="position: relative; height: 40vh; width: 40vw;"></canvas>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+<script>
+  const labels = ['Ultimas pontuações'];
+  const data = {
+      labels: labels,
+      datasets: [{
+          label: 'Pontuação',
+          data: [], // Assumindo que o máximo de pontos é 10
+          backgroundColor: [
+              '#ffb703',
+              '#219ebc',
+              '#023047'
+          ],
+          borderColor: [
+              '#ffb703',
+              '#219ebc',
+              '#023047'
+          ],
+          borderWidth: 1
+      }]
+  };
+
+  const ctx = document.getElementById('myBarChart').getContext('2d'); // Corrigido aqui
+  const myChart = new Chart(ctx, {
+      type: 'bar', // Alterado para bar
+      data: data,
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          },
+          responsive: true,
+          plugins: {
+              legend: {
+                  position: 'top',
+                  labels: {
+                      font: {
+                          size: 13,
+                          family: 'Arial, sans-serif',
+                      },
+                      color: 'black'
+                  }
+              },
+              title: {
+                  display: true,
+                  text: 'Pontuação do Quiz',
+                  font: {
+                      size: 20,
+                      family: 'Arial, sans-serif',
+                      weight: 'bold',
+                  },
+                  color: 'black',
+                  padding: {
+                      top: 20,
+                      bottom: 0
+                  },
+              },
+              tooltip: {
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  titleFont: {
+                      size: 14,
+                      family: 'Arial, sans-serif',
+                      weight: 'bold'
+                  },
+                  bodyFont: {
+                      size: 12,
+                      family: 'Arial, sans-serif',
+                      weight: 'normal'
+                  },
+                  bodyColor: '#fff',
+                  borderColor: '#333',
+                  borderWidth: 1
+              }
+          },
+          backgroundColor: '#fff', // Define o fundo como branco
+      }
+  });
+
+function obterPontuacao(){
+
+  fetch(`/usuarios/obterPontuacao?idUsuario=${sessionStorage.getItem('ID_USUARIO')}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (!resposta.ok) {
+          throw "Houve um erro ao tentar realizar o login!";
+        } 
+          return resposta.json()
+        
+    })
+    .then(function(data){
+      console.log("Três maiores pontuações: ", data);
+
+      const nomes = data.map(item => item.nome);
+      const pontuacoes = data.map(item => parseInt(item.total_pontuacao));
+
+      myChart.data.labels = nomes;
+      myChart.data.datasets[0].data = pontuacoes;
+
+      myChart.update();
+
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+
+}
+
+</script>
+
+

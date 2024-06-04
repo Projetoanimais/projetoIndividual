@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
+
+*{
+    font-family: "Secular One", sans-serif;
+
+}
+body {
+    margin: 0;
+    font-family: "PT Serif", serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.header {
+    display: flex;
+    width: 100%;
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    align-items: center;
+    z-index: 1000;
+    /* Define um valor alto de z-index para a barra de navegação */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-right: 5vh;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2vw;
+    color: white;
+    margin-top: 4.5vh;
+
+}
+
+#navbar {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    flex-direction: row;
+    background-color: #000814; /* Cor amarela */
+    justify-content: flex-end;
+    /* Mover a navbar para o lado direito */
+    padding-right: 20px;
+    /* Adicionar um espaço à direita para separar do lado da tela */
+}
+
+/* Estilo para o item "Sair" */
+.login {
+    border: 1px solid white;
+    /* Adicionar uma borda ao redor do item "Sair" */
+    border-radius: 5px;
+    /* Arredondar as bordas da borda */
+    padding: 5px 5px;
+    /* Adicionar um pouco de espaço interno */
+
+}
+
+/* Estilo para o texto do item "Sair" */
+.login a {
+    color: white;
+    /* Definir a cor do texto como branco */
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    background-image: url("https://static.vecteezy.com/ti/fotos-gratis/p1/24620286-vibrante-cores-do-tropical-peixe-dentro-uma-caribe-recife-paraiso-gerado-de-ai-gratis-foto.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    /* border: 0.5vh solid black; */
+}
+
+.home h1 {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14vh;
+    font-family: "Secular One", sans-serif;
+    margin-top: 10vh;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.conteudo  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin-bottom: 10vh;
+    border-top: 2vh;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+
+}
+
+.conteudo h2 {
+    display: flex;
+    font-size: 5vh;
+    font-weight: bold;
+    margin-left: 4vh;
+    font-family: "Secular One", sans-serif;
+
+}
+
+.conteudo h3 {
+    display: flex;
+    font-size: 3vh;
+font-weight: 100;
+
+}
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #001d3d;
+    border:  solid black 0.5vh;
+}
+
+.sobre h1 {
+    display: flex;
+    font-weight: bold;
+    color: white;
+    justify-content: center;
+    font-size: 5vh;
+    font-family: "Secular One", sans-serif;
+}
+
+.containerSobre {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+}
+
+.design {
+    display: flex;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.conteudoSobre {
+    display: flex;
+    width: 80%;
+  
+}
+
+.conteudoSobre h2 {
+    display: flex;
+    font-size: 4vh;
+    color: black;
+    font-family: sans-serif;
+    text-align: start;
+    padding: 20px; /* Adicione o espaçamento interno desejado */
+
+}
+.curiosidades {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, #001d3d, #003566, #003566);
+
+}
+
+
+.imagemCuriosidade {
+    display: flex;
+    padding: 5vh;
+    justify-content: center;
+}
+
+.imagemPeixe {
+    max-width: 80%;
+    border: solid 0.5vh white;
+    height: 50vh;
+    border-radius: 5px;
+    /* margin-left: 30vh;height: 50vh; */
+    /* Ajusta a altura para manter a proporção */
+}
+
+.curiosidades h1 {
+    display: flex;
+    /* font-weight: bold; */
+    color: white;
+    font-size: 5vh;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.conteudoCuriosidades {
+    display: flex;
+    width: 80%;
+    align-items: start;
+    background-color: #ffc300;
+    border-radius: 5px;
+    padding: 10px;
+    color: wheat;
+    justify-content: center;
+    font-size: 2vh;
+    margin: 0 auto; 
+
+}
+
+
+.conteudoCuriosidadesInicio {
+    display: flex;
+    width: 80%;
+    background-color: transparent;
+    flex-direction: column;
+}
+
+.tituloQuiz {
+    text-align: center;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centralizar horizontalmente */
+}
+
+.tituloQuiz h1 {
+    font-size: 5vh;
+    margin-bottom: 2vh;
+}
+
+.tituloQuiz p {
+    font-size: 3vh;
+    color: wheat;
+}
+
+.quizInicar {
+    text-decoration: none;
+    font-size: 3vh;
+    background-color: #ffc300;
+    color: white;
+    padding: 1.5vh 4vh;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 8vh;
+    transition: background-color 0.3s ease;
+}
+
+.quizInicar:hover {
+    background-color: #ffd60a;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000814;
+    color: #fff;
+    height: 40vh;
+    flex-direction: column;
+
+    /* box-sizing: border-box; */
+}
+
+.footer-content {
+    display: flex;
+    font-size: 3vh;
+ 
+}
+
+.footerEsquerda {
+    margin-right: 120vh;
+}
+.footerDireita{
+    margin-right: 10vh;
+    margin-bottom: 15vh;
+
+}
+.vejaMais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    font-size: 3vh;
+    border: solid #ffc300 0.5vh;
+    color: white;
+    padding: 1.5vh 4vh;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-bottom: 4vh; */
+    transition: background-color 0.3s ease;
+    }
+
+.vejaMais p{
+    margin-bottom: 7vh;
+}
+
+
+.vejaMais:hover {
+background-color: #ffd60a;
+}
+
+.contact-info {
+    list-style-type: none;
+}
+
+.social-links {
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
